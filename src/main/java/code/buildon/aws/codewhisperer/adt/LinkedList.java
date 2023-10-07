@@ -105,7 +105,35 @@ public class LinkedList {
             }
             current = current.getNext();
         }
-    }    
+    }
+
+    // Create a method to remove the first element of the list and
+    // call this method 'removeFirst'.
+    public int removeFirst() {
+        int data = head.getData();
+        head = head.getNext();
+        head.setPrev(null);
+        size--;
+        return data;
+    }
+
+    // Implement a method to retrieve the first element of the list.
+    public int getFirst() {
+        return head.getData();
+    }
+
+    // Create a method to find the max element in the list.
+    public int findMax() {
+        NodeElement current = head;
+        int max = current.getData();
+        while (current != null) {
+            if (current.getData() > max) {
+                max = current.getData();
+            }
+            current = current.getNext();
+        }
+        return max;
+    }
 
     // Main method.
     public static void main(String[] args) {
